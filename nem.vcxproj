@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|Win32">
+      <Configuration>debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|Win32">
+      <Configuration>release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a7a678cd-2511-435a-809c-54a72925046d}</ProjectGuid>
+    <RootNamespace>nem</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>advance.tech recode</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)output\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\$(Configuration)\</IntDir>
+    <IncludePath>$(DXSDK_DIR)\include;$(ProjectDir)dependencies\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\lib\x86;$(ProjectDir)dependencies\;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)output\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)output\$(Configuration)\</IntDir>
+    <IncludePath>C:\Sources\Include\Freetype includes;C:\Sources\Include;C:\Users\l1ney\Documents\top g source\desync-recode-v2-main\nem\dependencies\imgui\include;C:\Users\l1ney\Desktop\srcs\desync-recode-v2\nem\dependencies\imgui\include;C:\Users\GRIGS\Desktop\advance.tech\desync-recode-v2\nem\dependencies\imgui\include;C:\Users\L1ney\Desktop\cheat\desync-recode-v2\nem\dependencies\imgui\include;D:\Projects\desync-recode-v2\nem\dependencies\imgui\include;C:\Users\Hyouki\Desktop\advance.tech\advance.tech desync recode\desync-recode-v2\nem\dependencies\imgui\include;$(DXSDK_DIR)\include;$(ProjectDir)dependencies\;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Sources\Include\Freetype includes;C:\Sources\Include;C:\Users\l1ney\Documents\top g source\desync-recode-v2-main\nem\dependencies\imgui\include;C:\Users\l1ney\Desktop\srcs\desync-recode-v2\nem\dependencies\imgui\include;C:\Users\l1ney\Desktop\srcs\desync-recode-v2\nem\dependencies\imgui;C:\Users\GRIGS\Desktop\advance.tech\desync-recode-v2\nem\dependencies\imgui\include;C:\Users\L1ney\Desktop\cheat\desync-recode-v2\nem\dependencies\imgui;C:\Users\Hyouki\Desktop\advance.tech\advance.tech desync recode\desync-recode-v2\nem\dependencies\imgui;$(DXSDK_DIR)\lib\x86;$(ProjectDir)dependencies\;D:\Projects\desync-recode-v2\nem\dependencies\imgui;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>/Zc:char8_t-  /Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling>false</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua51.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalOptions>/Zc:char8_t-  /Zc:threadSafeInit- /GR- %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AdditionalIncludeDirectories>C:\Users\poulo\Downloads\top_g_source_1\top g source\desync-recode-v2-main\csgo\dependencies\imgui\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua51.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/MAP %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cloud\cipher\cipher.cpp" />
+    <ClCompile Include="cloud\cloud.cpp" />
+    <ClCompile Include="cloud\requests\requests.cpp" />
+    <ClCompile Include="cloud\tables\tables.cpp" />
+    <ClCompile Include="cloud\worker\worker.cpp" />
+    <ClCompile Include="context\impl\context.cpp" />
+    <ClCompile Include="dependencies\cfg\impl\cfg.cpp" />
+    <ClCompile Include="dependencies\custom.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_draw.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_freetype.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="dependencies\minhook\buffer.c" />
+    <ClCompile Include="dependencies\minhook\hde\hde32.c" />
+    <ClCompile Include="dependencies\minhook\hook.c" />
+    <ClCompile Include="dependencies\minhook\trampoline.c" />
+    <ClCompile Include="dependencies\thread_pool\impl\thread_pool.cpp" />
+    <ClCompile Include="hacks\aim_bot\impl\aim_bot.cpp" />
+    <ClCompile Include="hacks\aim_bot\impl\knife_bot.cpp" />
+    <ClCompile Include="hacks\anim_sync\impl\anim_sync.cpp" />
+    <ClCompile Include="hacks\anti_aim\impl\anti_aim.cpp" />
+    <ClCompile Include="hacks\auto_wall\impl\auto_wall.cpp" />
+    <ClCompile Include="hacks\eng_pred\impl\eng_pred.cpp" />
+    <ClCompile Include="hacks\exploits\impl\exploits.cpp" />
+    <ClCompile Include="hacks\lag_comp\impl\lag_comp.cpp" />
+    <ClCompile Include="hacks\movement\impl\movement.cpp" />
+    <ClCompile Include="hacks\shots\impl\shots.cpp" />
+    <ClCompile Include="hacks\sim_ctx\impl\sim_ctx.cpp" />
+    <ClCompile Include="hacks\skins\impl\skins.cpp" />
+    <ClCompile Include="hacks\visuals\impl\visuals.cpp" />
+    <ClCompile Include="hooks\impl\hooks.cpp" />
+    <ClCompile Include="init_security\init_security.cpp" />
+    <ClCompile Include="lua\impl\lua.cpp" />
+    <ClCompile Include="menu\impl\menu.cpp" />
+    <ClCompile Include="menu\NL\Deps\KeysList\KeysList.cpp" />
+    <ClCompile Include="menu\NL\Impl\Animations.cpp" />
+    <ClCompile Include="menu\NL\Impl\ColorPicker.cpp" />
+    <ClCompile Include="menu\NL\Impl\Elements.cpp" />
+    <ClCompile Include="menu\NL\Impl\Initializers.cpp" />
+    <ClCompile Include="menu\NL\Impl\Keybinds.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\BindCombo.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Button.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Checkbox.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Child.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Color.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Combo.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Image.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\KeybindValue.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\LuaBlock.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\MultiCombo.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Preview\DynamicText.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Preview\Preview.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\RectFilled.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\SkinsBlock.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Slider.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Tab.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Text.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\TextInput.cpp" />
+    <ClCompile Include="menu\NL\Impl\Widgets\Window.cpp" />
+    <ClCompile Include="menu\NL\Neverlose.cpp" />
+    <ClCompile Include="menu\NL\PostProcessing\PostProcessing.cpp" />
+    <ClCompile Include="nem.cpp" />
+    <ClCompile Include="patterns_security\loader_classes\HiddenSockets\HiddenSockets.cpp" />
+    <ClCompile Include="patterns_security\loader_classes\Modules\Modules.cpp" />
+    <ClCompile Include="patterns_security\loader_classes\Syscalls\Syscalls.cpp" />
+    <ClCompile Include="valve\net_vars\impl\net_vars.cpp" />
+    <ClCompile Include="valve\other\impl\other.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\csgo\dependencies\imgui\imgui_internal.h" />
+    <ClInclude Include="allah.h" />
+    <ClInclude Include="cloud\cipher\cipher.h" />
+    <ClInclude Include="cloud\cloud.h" />
+    <ClInclude Include="cloud\props.h" />
+    <ClInclude Include="cloud\requests\requests.h" />
+    <ClInclude Include="cloud\tables\tables.h" />
+    <ClInclude Include="cloud\worker\worker.h" />
+    <ClInclude Include="context\context.hpp" />
+    <ClInclude Include="dependencies\avatar.hpp" />
+    <ClInclude Include="dependencies\cfg\cfg.hpp" />
+    <ClInclude Include="dependencies\cfg\detail\data_types\base_cfg_var.hpp" />
+    <ClInclude Include="dependencies\cfg\detail\detail.hpp" />
+    <ClInclude Include="dependencies\custom.hpp" />
+    <ClInclude Include="dependencies\font.hpp" />
+    <ClInclude Include="dependencies\imgui\imconfig.h" />
+    <ClInclude Include="dependencies\imgui\imgui.h" />
+    <ClInclude Include="dependencies\imgui\imgui_freetype.h" />
+    <ClInclude Include="dependencies\imgui\imgui_impl_dx9.h" />
+    <ClInclude Include="dependencies\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="dependencies\imgui\imstb_rectpack.h" />
+    <ClInclude Include="dependencies\imgui\imstb_textedit.h" />
+    <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\config\ftconfig.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\config\ftheader.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\config\ftmodule.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\config\ftoption.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\config\ftstdlib.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\freetype.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftadvanc.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftbbox.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftbdf.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftbitmap.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftbzip2.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftcache.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftchapters.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftcid.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftcolor.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftdriver.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\fterrdef.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\fterrors.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftfntfmt.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftgasp.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftglyph.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftgxval.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftgzip.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftimage.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftincrem.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftlcdfil.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftlist.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftlzw.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftmac.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftmm.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftmodapi.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftmoderr.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftotval.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftoutln.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftparams.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftpfr.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftrender.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftsizes.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftsnames.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftstroke.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftsynth.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftsystem.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\fttrigon.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\fttypes.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ftwinfnt.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\t1tables.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\ttnameid.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\tttables.h" />
+    <ClInclude Include="dependencies\imgui\include\freetype\tttags.h" />
+    <ClInclude Include="dependencies\imgui\include\ft2build.h" />
+    <ClInclude Include="dependencies\json.hpp" />
+    <ClInclude Include="dependencies\logo.hpp" />
+    <ClInclude Include="dependencies\minhook\buffer.h" />
+    <ClInclude Include="dependencies\minhook\hde\hde32.h" />
+    <ClInclude Include="dependencies\minhook\hde\pstdint.h" />
+    <ClInclude Include="dependencies\minhook\hde\table32.h" />
+    <ClInclude Include="dependencies\minhook\minhook.h" />
+    <ClInclude Include="dependencies\minhook\trampoline.h" />
+    <ClInclude Include="dependencies\qo0_icons.hpp" />
+    <ClInclude Include="dependencies\sol\config.hpp" />
+    <ClInclude Include="dependencies\sol\forward.hpp" />
+    <ClInclude Include="dependencies\lauxlib.h" />
+    <ClInclude Include="dependencies\lua.h" />
+    <ClInclude Include="dependencies\lua.hpp" />
+    <ClInclude Include="dependencies\luaconf.h" />
+    <ClInclude Include="dependencies\luajit.h" />
+    <ClInclude Include="dependencies\lualib.h" />
+    <ClInclude Include="dependencies\sol\sol.hpp" />
+    <ClInclude Include="dependencies\thread_pool\detail\detail.hpp" />
+    <ClInclude Include="dependencies\thread_pool\thread_pool.hpp" />
+    <ClInclude Include="dependencies\xorstr.hpp" />
+    <ClInclude Include="hacks\aim_bot\aim_bot.hpp" />
+    <ClInclude Include="hacks\aim_bot\knife_bot.h" />
+    <ClInclude Include="hacks\anim_sync\anim_sync.hpp" />
+    <ClInclude Include="hacks\anti_aim\anti_aim.hpp" />
+    <ClInclude Include="hacks\auto_wall\auto_wall.hpp" />
+    <ClInclude Include="hacks\eng_pred\eng_pred.hpp" />
+    <ClInclude Include="hacks\exploits\exploits.hpp" />
+    <ClInclude Include="hacks\hacks.hpp" />
+    <ClInclude Include="hacks\lag_comp\lag_comp.hpp" />
+    <ClInclude Include="hacks\movement\movement.hpp" />
+    <ClInclude Include="hacks\shots\shots.hpp" />
+    <ClInclude Include="hacks\sim_ctx\sim_ctx.h" />
+    <ClInclude Include="hacks\skins\skins.hpp" />
+    <ClInclude Include="hacks\visuals\visuals.hpp" />
+    <ClInclude Include="hooks\hooks.hpp" />
+    <ClInclude Include="init_security\init_security.h" />
+    <ClInclude Include="lua\lua.hpp" />
+    <ClInclude Include="math\math.hpp" />
+    <ClInclude Include="menu\menu.hpp" />
+    <ClInclude Include="menu\NL\Classes\C_Animation.h" />
+    <ClInclude Include="menu\NL\Classes\C_BindComboItemProperty.h" />
+    <ClInclude Include="menu\NL\Classes\C_Element.h" />
+    <ClInclude Include="menu\NL\Classes\C_Var.h" />
+    <ClInclude Include="menu\NL\Deps\Hash.h" />
+    <ClInclude Include="menu\NL\Deps\KeysList\KeysList.h" />
+    <ClInclude Include="menu\NL\Fonts\MuseoSans700.h" />
+    <ClInclude Include="menu\NL\Fonts\MuseoSans900.h" />
+    <ClInclude Include="menu\NL\Icons\Aimbot.h" />
+    <ClInclude Include="menu\NL\Icons\AntiAim.h" />
+    <ClInclude Include="menu\NL\Icons\Bomb.h" />
+    <ClInclude Include="menu\NL\Icons\ColorPicker.h" />
+    <ClInclude Include="menu\NL\Icons\Configs.h" />
+    <ClInclude Include="menu\NL\Icons\Grenades.h" />
+    <ClInclude Include="menu\NL\Icons\Inventory.h" />
+    <ClInclude Include="menu\NL\Icons\Legitbot.h" />
+    <ClInclude Include="menu\NL\Icons\Main.h" />
+    <ClInclude Include="menu\NL\Icons\Players.h" />
+    <ClInclude Include="menu\NL\Icons\Scripts.h" />
+    <ClInclude Include="menu\NL\Icons\View.h" />
+    <ClInclude Include="menu\NL\Icons\Weapons.h" />
+    <ClInclude Include="menu\NL\Icons\World.h" />
+    <ClInclude Include="menu\NL\Neverlose.h" />
+    <ClInclude Include="menu\NL\PostProcessing\PostProcessing.h" />
+    <ClInclude Include="patterns_security\loader_classes\Context.h" />
+    <ClInclude Include="patterns_security\loader_classes\DynamicNumber.h" />
+    <ClInclude Include="patterns_security\loader_classes\Hash.h" />
+    <ClInclude Include="patterns_security\loader_classes\HiddenSockets\HiddenSockets.h" />
+    <ClInclude Include="patterns_security\loader_classes\loader_includes.h" />
+    <ClInclude Include="patterns_security\loader_classes\Modules\Modules.h" />
+    <ClInclude Include="patterns_security\loader_classes\Nt.h" />
+    <ClInclude Include="patterns_security\loader_classes\Rebuild\Rebuild.h" />
+    <ClInclude Include="patterns_security\loader_classes\Syscalls\Syscalls.h" />
+    <ClInclude Include="patterns_security\loader_classes\Utils\Utils.h" />
+    <ClInclude Include="patterns_security\loader_classes\Xor.h" />
+    <ClInclude Include="patterns_security\patterns_security.h" />
+    <ClInclude Include="renderer\renderer.h" />
+    <ClInclude Include="util\util.hpp" />
+    <ClInclude Include="valve\interfaces\fnv1a.h" />
+    <ClInclude Include="valve\interfaces\random.h" />
+    <ClInclude Include="valve\net_vars\net_vars.hpp" />
+    <ClInclude Include="nem.hpp" />
+    <ClInclude Include="valve\entities\entities.hpp" />
+    <ClInclude Include="valve\interfaces\interfaces.hpp" />
+    <ClInclude Include="valve\other\other.hpp" />
+    <ClInclude Include="valve\valve.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="context\impl\context.inl" />
+    <None Include="dependencies\cfg\impl\cfg.inl" />
+    <None Include="dependencies\thread_pool\impl\thread_pool.inl" />
+    <None Include="hacks\aim_bot\impl\aim_bot.inl" />
+    <None Include="hacks\anim_sync\impl\anim_sync.inl" />
+    <None Include="hacks\anti_aim\impl\anti_aim.inl" />
+    <None Include="hacks\eng_pred\impl\eng_pred.inl" />
+    <None Include="hacks\exploits\impl\exploits.inl" />
+    <None Include="hacks\lag_comp\impl\lag_comp.inl" />
+    <None Include="hacks\movement\impl\movement.inl" />
+    <None Include="hacks\shots\impl\shots.inl" />
+    <None Include="hacks\sim_ctx\impl\sim_ctx.inl" />
+    <None Include="hacks\skins\impl\skins.inl" />
+    <None Include="hacks\visuals\impl\visuals.inl" />
+    <None Include="lua\impl\lua.inl" />
+    <None Include="math\impl\math.inl" />
+    <None Include="util\impl\util.inl" />
+    <None Include="valve\entities\impl\entities.inl" />
+    <None Include="valve\interfaces\impl\interfaces.inl" />
+    <None Include="valve\net_vars\impl\net_vars.inl" />
+    <None Include="valve\other\impl\other.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="dependencies\imgui\include\freetype.lib" />
+    <Library Include="dependencies\lua51.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

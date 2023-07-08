@@ -1,0 +1,1 @@
+#include "..\patterns_security\loader_classes\Xor.h"
